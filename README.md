@@ -2,8 +2,9 @@
 
 - PC
   ![md_0](https://user-images.githubusercontent.com/56675004/93101753-a2f30280-f6e5-11ea-9cae-d1fdca63d18c.JPG)
-  <br>
+  
 - Mobile
+
   ![md_1](https://user-images.githubusercontent.com/56675004/93101805-b0a88800-f6e5-11ea-8923-4e636cf62eed.JPG)
 
 ## 사용 언어

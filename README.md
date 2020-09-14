@@ -37,7 +37,6 @@
 각각의 카테고리 메뉴를 클릭하면 해당 카테고리에 해당하는 옷들이 분류되어 나타납니다.
 ```
 
-<br>
 ![md_3](https://user-images.githubusercontent.com/56675004/93101871-c3bb5800-f6e5-11ea-86dd-1a60fc1a1498.JPG)
 
 ```

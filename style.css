@@ -10,7 +10,9 @@ body {
 html,
 body,
 h1,
-h2 {
+h2,
+ul,
+li {
   margin: 0;
   padding: 0;
 }

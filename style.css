@@ -1,0 +1,297 @@
+/* 폰트 적용 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap");
+
+html,
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+blockquote,
+pre,
+code,
+address,
+ul,
+ol,
+li,
+menu,
+nav,
+section,
+article,
+aside,
+dl,
+dt,
+dd,
+table,
+thead,
+tbody,
+tfoot,
+label,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+hr,
+input,
+button,
+textarea,
+object,
+figure,
+figcaption {
+  margin: 0;
+  padding: 0;
+}
+
+main,
+header,
+section,
+nav,
+footer,
+aside,
+article,
+figure {
+  display: block;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* 반응형 */
+html,
+body {
+  overflow-x: hidden;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+strong,
+th {
+  font-weight: normal;
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+input,
+button,
+select,
+fieldset,
+textarea {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* 라이브러리 */
+:root {
+  /* color */
+  --color-black: #3f454d;
+  --color-white: #ffffff;
+  --color-blue: #3b88c3;
+  --color-yellow: #fbbe28;
+  --color-pink: #fd7f84;
+  --color-light-grey: #dfdfdf;
+
+  /* size */
+  --size-btn: 40px;
+  --font-size: 14px;
+  --base-space: 8px;
+  --item-thumbnail-size: 40px;
+
+  /* animation-duration */
+  --animation-duration: 0.3s;
+}
+
+.black {
+  background-color: var(--color-black);
+}
+
+.blue {
+  background-color: var(--color-blue);
+}
+
+.yellow {
+  background-color: var(--color-yellow);
+}
+
+.pink {
+  background-color: var(--color-pink);
+}
+
+.light-grey {
+  background-color: var(--color-light-grey);
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  background-color: #e2e7ee;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 로고 */
+.top-logo {
+  cursor: pointer;
+}
+
+.top-logo,
+.category-menu li button {
+  transition: transform var(--animation-duration);
+}
+
+.top-logo:hover,
+.category-menu li button:hover {
+  transform: scale(1.05);
+}
+
+/* 카테고리 메뉴 */
+.category-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-menu li {
+  padding: 0 var(--base-space);
+}
+
+.category-menu li > button {
+  display: block;
+}
+
+.category-menu li .option-btn img {
+  display: block;
+  width: var(--size-btn);
+  height: var(--size-btn);
+}
+
+.category-menu li .color-btn {
+  font-size: var(--font-size);
+  padding: calc(var(--base-space)) calc(var(--base-space) * 2);
+  border-radius: calc(var(--base-space) / 2);
+  color: #fff;
+}
+
+.category-menu li .gender-btn img {
+  display: block;
+  width: var(--size-btn);
+  height: var(--size-btn);
+}
+
+.category-menu li .size-btn {
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  padding: calc(var(--base-space)) calc(var(--base-space) * 2);
+  border-radius: calc(var(--base-space) / 2);
+}
+
+/* 아이템 리스트 */
+.item-list {
+  width: 60%;
+  height: 60%;
+  overflow-y: auto;
+  margin-top: 30px;
+}
+
+.item-list::-webkit-scrollbar {
+  width: 12px;
+}
+
+.item-list::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+}
+
+.item-list .item {
+  background-color: #fff;
+  border-radius: calc(var(--base-space) / 2);
+}
+
+.item-list .item:not(:last-child) {
+  margin-bottom: var(--base-space);
+}
+
+.item-list .item a {
+  display: flex;
+  align-items: center;
+  padding: var(--base-space);
+}
+
+.item-list .item .item-thumbnail {
+  width: var(--item-thumbnail-size);
+  height: var(--item-thumbnail-size);
+}
+
+.item-list .item .item-name {
+  font-size: var(--font-size);
+  padding-left: calc(var(--base-space) * 2);
+}
+
+/* 반응형 css */
+@media (max-width: 767px) {
+  main {
+    padding: 0 20px;
+  }
+
+  /* 카테고리 메뉴 반응형 */
+  .category-menu {
+    flex-wrap: wrap;
+  }
+
+  .category-menu li {
+    padding: var(--base-space);
+  }
+
+  /* 아이템 리스트 반응형 */
+  .item-list {
+    width: 100%;
+  }
+
+  .item-list::-webkit-scrollbar {
+    width: 5px;
+  }
+}

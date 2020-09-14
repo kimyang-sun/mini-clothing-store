@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Clothing Store</title>
+
+    <script src="src/main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main role="main">
+      <!-- 상단 로고 -->
+      <h1 class="top-logo">
+        <img src="img/logo.png" alt="logo" />
+      </h1>
+
+      <!-- 카테고리 메뉴 -->
+      <ul class="category-menu">
+        <li>
+          <button class="option-btn">
+            <img
+              src="img/blue_t.png"
+              alt="tshirt"
+              data-key="type"
+              data-value="tshirt"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="option-btn">
+            <img
+              src="img/blue_p.png"
+              alt="pants"
+              data-key="type"
+              data-value="pants"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="option-btn">
+            <img
+              src="img/blue_s.png"
+              alt="skirt"
+              data-key="type"
+              data-value="skirt"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="color-btn blue" data-key="color" data-value="blue">
+            Blue
+          </button>
+        </li>
+        <li>
+          <button class="color-btn yellow" data-key="color" data-value="yellow">
+            Yellow
+          </button>
+        </li>
+        <li>
+          <button class="color-btn pink" data-key="color" data-value="pink">
+            Pink
+          </button>
+        </li>
+        <li>
+          <button class="gender-btn">
+            <img
+              src="img/male.png"
+              alt="male"
+              data-key="gender"
+              data-value="male"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="gender-btn">
+            <img
+              src="img/female.png"
+              alt="male"
+              data-key="gender"
+              data-value="female"
+            />
+          </button>
+        </li>
+        <li>
+          <button class="size-btn" data-key="size" data-value="large">
+            large
+          </button>
+        </li>
+        <li>
+          <button class="size-btn" data-key="size" data-value="medium">
+            medium
+          </button>
+        </li>
+        <li>
+          <button class="size-btn" data-key="size" data-value="small">
+            small
+          </button>
+        </li>
+      </ul>
+
+      <!-- 아이템 -->
+      <ul class="item-list"></ul>
+    </main>
+  </body>
+</html>

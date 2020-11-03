@@ -1,60 +1,70 @@
 "use strict";
-
-// JSON 파일에서 아이템 가져오기
+// load items & display items
 function loadItems() {
-  return fetch("data/data.json")
-    .then(response => response.json())
+  return fetch("./data/data.json")
+    .then(responsive => responsive.json())
     .then(json => json.items)
-    .catch(console.log);
+    .catch(new Error("Fetch Error"));
 }
 
-// 가져온 아이템 보여주기 (밑에 html 문자열 만든것을 보여주기)
 function displayItems(items) {
-  const container = document.querySelector(".item-list");
-  //const html = items.map(item => createHTMLString(item)).join("");
-  //console.log(html);
-  container.innerHTML = items.map(item => createHTMLString(item)).join("");
+  const itemList = document.querySelector(".item__list");
+  itemList.innerHTML = items.map(item => createHTML(item)).join("");
 }
 
-// 가져온 아이템으로 html 문자열 만들기
-function createHTMLString(item) {
+function createHTML(item) {
   return `
-  <li class="item">
+  <li class="item" data-value="${item.type}, ${item.color}, ${item.sex}, ${item.size}">
     <a href="#">
-      <img src="${item.image}" alt="${item.type}" / class="item-thumbnail">
-      <span class="item-name">${item.gender}, ${item.size}</span>
+      <img src="${item.image}" alt="${item.type}" />
+      <span class="item__name">${item.sex}, ${item.size}</span>
     </a>
   </li>
   `;
 }
 
-// 카테고리 메뉴 버튼 클릭 함수
-function onButtonClick(event, items) {
-  const dataset = event.target.dataset;
-  const key = dataset.key;
-  const value = dataset.value;
-  if (key == null || value == null) {
-    return;
+// category filter
+function siblings(element) {
+  return [...element.parentElement.children].filter(value => value != element);
+}
+
+function onButtonClick(event) {
+  const button = event.target.closest(".category__btn");
+  if (!button) return;
+  selectedBtnCheck(button);
+
+  const selected = document.querySelectorAll(".category__btn.selected");
+  const selectedValues = [...selected].map(btn => btn.dataset.value);
+
+  const items = document.querySelectorAll(".item");
+  items.forEach(item => {
+    const itemValues = item.dataset.value;
+    const filtered = selectedValues.filter(value => itemValues.includes(value));
+    if (filtered.length !== selected.length) {
+      item.classList.add("invisible");
+    } else {
+      item.classList.remove("invisible");
+    }
+  });
+}
+
+function selectedBtnCheck(selector) {
+  if (selector.classList.contains("selected")) {
+    selector.classList.remove("selected");
+  } else {
+    siblings(selector).forEach(value => value.classList.remove("selected"));
+    selector.classList.add("selected");
   }
-
-  const filltered = items.filter(item => item[key] === value);
-  displayItems(filltered);
 }
 
-// 이벤트 등록하기 (카테고리 메뉴 클릭했을때 카테고리에 맞게 분류)
-function setEventListener(items) {
-  const logo = document.querySelector(".top-logo");
-  const buttons = document.querySelector(".category-menu");
-
-  logo.addEventListener("click", () => displayItems(items));
-  buttons.addEventListener("click", event => onButtonClick(event, items));
+function setEventListener() {
+  const buttons = document.querySelector(".category__container");
+  buttons.addEventListener("click", event => onButtonClick(event));
 }
 
-// main
-loadItems()
-  .then(items => {
-    console.log(items);
-    displayItems(items);
-    setEventListener(items);
-  })
-  .catch(console.log);
+setEventListener();
+
+// load
+loadItems().then(items => {
+  displayItems(items);
+});

@@ -4,103 +4,161 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Clothing Store</title>
+    <meta name="description" content="Mini Clothing Store" />
+    <meta name="author" content="Kim" />
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./img/favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./img/favicon/favicon-96x96.png"
+    />
 
-    <script src="src/main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./src/main.js" defer></script>
   </head>
   <body>
     <main role="main">
-      <!-- 상단 로고 -->
-      <h1 class="top-logo">
-        <img src="img/logo.png" alt="logo" />
-      </h1>
+      <!-- logo -->
+      <a href="./index.html" class="logo">
+        <img src="./img/logo.png" alt="logo" />
+      </a>
 
-      <!-- 카테고리 메뉴 -->
-      <ul class="category-menu">
-        <li>
-          <button class="option-btn">
-            <img
-              src="img/blue_t.png"
-              alt="tshirt"
+      <!-- categories -->
+      <div class="category__container">
+        <div class="category__menu--kind category__menu">
+          <h3>Type</h3>
+          <div class="category__btns">
+            <button
+              type="button"
+              class="category__btn"
               data-key="type"
               data-value="tshirt"
-            />
-          </button>
-        </li>
-        <li>
-          <button class="option-btn">
-            <img
-              src="img/blue_p.png"
-              alt="pants"
+            >
+              <img src="./img/tshirt_w.png" alt="tshirt" />
+            </button>
+            <button
+              type="button"
+              class="category__btn"
               data-key="type"
               data-value="pants"
-            />
-          </button>
-        </li>
-        <li>
-          <button class="option-btn">
-            <img
-              src="img/blue_s.png"
-              alt="skirt"
+            >
+              <img src="./img/pants_w.png" alt="pants" />
+            </button>
+            <button
+              type="button"
+              class="category__btn"
               data-key="type"
               data-value="skirt"
-            />
-          </button>
-        </li>
-        <li>
-          <button class="color-btn blue" data-key="color" data-value="blue">
-            Blue
-          </button>
-        </li>
-        <li>
-          <button class="color-btn yellow" data-key="color" data-value="yellow">
-            Yellow
-          </button>
-        </li>
-        <li>
-          <button class="color-btn pink" data-key="color" data-value="pink">
-            Pink
-          </button>
-        </li>
-        <li>
-          <button class="gender-btn">
-            <img
-              src="img/male.png"
-              alt="male"
-              data-key="gender"
+            >
+              <img src="./img/skirt_w.png" alt="skirt" />
+            </button>
+          </div>
+        </div>
+        <div class="category__menu--color category__menu">
+          <h3>Color</h3>
+          <div class="category__btns">
+            <button
+              type="button"
+              class="category__btn red"
+              data-key="color"
+              data-value="red"
+            >
+              <span class="blind">Red</span>
+            </button>
+            <button
+              type="button"
+              class="category__btn blue"
+              data-key="color"
+              data-value="blue"
+            >
+              <span class="blind">Blue</span>
+            </button>
+            <button
+              type="button"
+              class="category__btn yellow"
+              data-key="color"
+              data-value="yellow"
+            >
+              <span class="blind">Yellow</span>
+            </button>
+          </div>
+        </div>
+        <div class="category__menu--sex category__menu">
+          <h3>Sex</h3>
+          <div class="category__btns">
+            <button
+              type="button"
+              class="category__btn"
+              data-key="sex"
               data-value="male"
-            />
-          </button>
-        </li>
-        <li>
-          <button class="gender-btn">
-            <img
-              src="img/female.png"
-              alt="male"
-              data-key="gender"
+            >
+              <img src="./img/male.png" alt="male" />
+            </button>
+            <button
+              type="button"
+              class="category__btn"
+              data-key="sex"
               data-value="female"
-            />
-          </button>
-        </li>
-        <li>
-          <button class="size-btn" data-key="size" data-value="large">
-            large
-          </button>
-        </li>
-        <li>
-          <button class="size-btn" data-key="size" data-value="medium">
-            medium
-          </button>
-        </li>
-        <li>
-          <button class="size-btn" data-key="size" data-value="small">
-            small
-          </button>
-        </li>
-      </ul>
+            >
+              <img src="./img/female.png" alt="female" />
+            </button>
+          </div>
+        </div>
+        <div class="category__menu--size category__menu">
+          <h3>Size</h3>
+          <div class="category__btns">
+            <button
+              type="button"
+              class="category__btn"
+              data-key="size"
+              data-value="large"
+            >
+              L
+            </button>
+            <button
+              type="button"
+              class="category__btn"
+              data-key="size"
+              data-value="medium"
+            >
+              M
+            </button>
+            <button
+              type="button"
+              class="category__btn"
+              data-key="size"
+              data-value="small"
+            >
+              S
+            </button>
+          </div>
+        </div>
+      </div>
 
-      <!-- 아이템 -->
-      <ul class="item-list"></ul>
+      <!-- item -->
+      <ul class="item__list"></ul>
     </main>
   </body>
 </html>

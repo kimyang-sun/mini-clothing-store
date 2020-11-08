@@ -24,10 +24,6 @@ function createHTML(item) {
 }
 
 // category filter
-function siblings(element) {
-  return [...element.parentElement.children].filter(value => value != element);
-}
-
 function onButtonClick(event) {
   const button = event.target.closest(".category__btn");
   if (!button) return;
@@ -38,7 +34,7 @@ function onButtonClick(event) {
 
   const items = document.querySelectorAll(".item");
   items.forEach(item => {
-    const itemValues = item.dataset.value;
+    const itemValues = item.dataset.value.split(", ");
     const filtered = selectedValues.filter(value => itemValues.includes(value));
     if (filtered.length !== selected.length) {
       item.classList.add("invisible");
@@ -55,6 +51,10 @@ function selectedBtnCheck(selector) {
     siblings(selector).forEach(value => value.classList.remove("selected"));
     selector.classList.add("selected");
   }
+}
+
+function siblings(element) {
+  return [...element.parentElement.children].filter(value => value != element);
 }
 
 function setEventListener() {

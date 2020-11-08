@@ -1,4 +1,4 @@
-# Mini Clothing Store v 2.0
+# Mini Clothing Store v 1.0
 
 - PC
 
